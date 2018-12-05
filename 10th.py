@@ -1,4 +1,21 @@
 # -*- coding: utf-8 -*-
+import numpy as np
+import matplotlib.pyplot as plt
+
+X=np.array([[100],[200],[220],[310]])
+y=np.array([[1.1],[2],[2.2],[3.1]])
+
+from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+regressor.fit(X, y)
+
+# Predicting the Test set results
+y_pred = regressor.predict(X)
+
+
+plt.scatter(X, y, color = 'red')
+plt.plot(X, regressor.predict(X), color = 'blue')
+plt.show()
 """
 Created on Mon Nov 26 00:35:48 2018
 
